@@ -3,7 +3,7 @@ package com.n11.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class ConfigurationReader {
+public class myConfigurationReader {
     private static Properties properties;
 
     static {
