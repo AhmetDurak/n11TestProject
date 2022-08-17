@@ -25,7 +25,7 @@ public class Driver {
 
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
 
-    public static WebDriver getDriver() {
+    public static WebDriver get() {
         if (driverPool.get() == null) {
             String browser = ConfigurationReader.get("browser");
             switch (browser) {

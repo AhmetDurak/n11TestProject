@@ -12,14 +12,14 @@ public class Hooks {
     @After(order = 1)
     public void tearDownScenario(Scenario scenario){
         if (false){//  <---- scenario.isFailed()
-            byte[] screenshot =((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            byte[] screenshot =((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot,"image/png", scenario.getName());
         }
         Driver.closeDriver();
     }
     @AfterStep(value = "@takeSS")
     public void eachStepScreenShot(Scenario scenario){
-        byte[] screenshot =((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+        byte[] screenshot =((TakesScreenshot)Driver.get()).getScreenshotAs(OutputType.BYTES);
         scenario.attach(screenshot,"image/png", scenario.getName());
     }
 
